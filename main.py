@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from common_model.mainservice import getProduct, getProductUrl, getRetailPrice
 
 
@@ -16,7 +16,7 @@ def index():
         'get_product_url': get_product_url,
         'get_retail_price': get_retail_price
     }
-    return jsonify(context)
+    return render_template('index.html', data=context)
 
 
 
